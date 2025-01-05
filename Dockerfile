@@ -24,14 +24,14 @@ RUN apt-get install -y \
         gcc-mingw-w64
 
 ## Switch build dependencies
-### Install devkitpro for switch build
-#RUN wget https://apt.devkitpro.org/install-devkitpro-pacman && \
-#    chmod +x ./install-devkitpro-pacman && \
-#    sed -i 's/apt-get/apt-get -y /g' ./install-devkitpro-pacman && \
-#    ./install-devkitpro-pacman
-### Install switch development tools
-#RUN ln -s /proc/self/mounts /etc/mtab
-#RUN dkp-pacman --noconfirm -S switch-dev switch-sdl2 switch-tools
+## Install devkitpro for switch build
+RUN wget https://apt.devkitpro.org/install-devkitpro-pacman && \
+   chmod +x ./install-devkitpro-pacman && \
+   sed -i 's/apt-get/apt-get -y /g' ./install-devkitpro-pacman && \
+   ./install-devkitpro-pacman
+## Install switch development tools
+RUN ln -s /proc/self/mounts /etc/mtab
+RUN dkp-pacman --noconfirm -S switch-dev switch-sdl2 switch-tools
 
 RUN mkdir /zelda3
 WORKDIR /zelda3
