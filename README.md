@@ -1,3 +1,7 @@
+# Fork do projeto https://github.com/snesrev/zelda3
+Alterações para compilação usando docker para Linux, Windows e Switch.
+
+
 # Zelda3
 A reimplementation of Zelda 3.
 
