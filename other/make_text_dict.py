@@ -13,7 +13,7 @@ def memo(s):
 def tos(s): return "".join(memoslist[c] for c in s)
 
 lines = []
-for line in open('dialogue.txt', 'r').read().splitlines():
+for line in util.open_asset('dialogue.txt', 'r').read().splitlines():
   line = line.split(': ')[1]
 
   r = array.array('H')

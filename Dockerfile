@@ -15,15 +15,13 @@ RUN apt-get update && \
         wget
 
 ## install python dependencies
-COPY requirements.txt /tmp/
+COPY other/requirements.txt /tmp/
 RUN pip3 install -r /tmp/requirements.txt
 
 ## Windows build dependencies
-#RUN apt-get install -y \
-#        binutils-mingw-w64
-#RUN apt-get install -y \
-#        tcc \
-#        unzip
+RUN apt-get install -y \
+        binutils-mingw-w64 \
+        gcc-mingw-w64
 
 ## Switch build dependencies
 ### Install devkitpro for switch build

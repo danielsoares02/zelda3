@@ -1,37 +1,72 @@
-TARGET_EXEC:=zelda3
+TARGET_EXEC:=builds/zelda3
+ROM:=extras/zelda3.sfc
 SRCS:=$(wildcard src/*.c snes/*.c) third_party/gl_core/gl_core_3_1.c third_party/opus-1.3.1-stripped/opus_decoder_amalgam.c
 OBJS:=$(SRCS:%.c=%.o)
 PYTHON:=/usr/bin/env python3
 CFLAGS:=$(if $(CFLAGS),$(CFLAGS),-O2 -Werror) -I .
-CFLAGS:=${CFLAGS} $(shell sdl2-config --cflags) -DSYSTEM_VOLUME_MIXER_AVAILABLE=0
+CFLAGS2:=$(shell sdl2-config --cflags) -DSYSTEM_VOLUME_MIXER_AVAILABLE=0
+RUNTIME:=$(if $(RUNTIME),$(RUNTIME),linux) # Configura o destino por padrão como o SO em execução
+ROM_TRANSLATED:=extras/zelda3-$(LANGUAGE).sfc
 
-ifeq (${OS},Windows_NT)
-    WINDRES:=windres
-    RES:=zelda3.res
-    SDLFLAGS:=-Wl,-Bstatic $(shell sdl2-config --static-libs)
+ifeq (${RUNTIME},windows)
+	RES:=assets/zelda3.res
+	TARGET_EXEC:=$(TARGET_EXEC).exe
+
+# 	Configura o destino para Windows
+	ifeq (${OS},Windows_NT)
+# 		Se já estiver no Windows seta o windres como "windres" que precisa estar instalado
+		WINDRES:windres
+	else
+# 		Se estivermos no Linux usa o cross-compiler para Windows
+		SDL2_DLL:=builds/SDL2.dll
+		SDLFOLDER:=extras/SDL2
+		MINGW32:=x86_64-w64-mingw32
+		CFLAGS2:=-I$(SDLFOLDER)/include/SDL2 -Dmain=SDL_main -DSYSTEM_VOLUME_MIXER_AVAILABLE=0
+		WINDRES:=$(MINGW32)-windres
+		CC:=$(MINGW32)-gcc-9
+		SDLFLAGS:=-static-libgcc -static-libstdc++ -Wl,-Bstatic -L$(SDLFOLDER)/lib -lSDL2 -I$(SDLFOLDER)/include/SDL2 -lSDL2main $(SDLFOLDER)/lib/libSDL2.a -lmingw32 -mwindows -lm -lkernel32 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lversion -luuid -ladvapi32 -lsetupapi -lshell32 -ldinput8
+	endif
 else
-    SDLFLAGS:=-lSDL2 -lm
+# 	Configura o destino para Linux
+	SDLFLAGS:=-lSDL2 -lm
 endif
 
-.PHONY: all clean clean_obj clean_gen
+all: builds/zelda3_assets.dat $(TARGET_EXEC) $(SDL2_DLL) builds/zelda3.ini clean
 
-all: $(TARGET_EXEC) zelda3_assets.dat
+builds/zelda3_assets.dat: assets assets/dialogue.txt assets/dialogue_${LANGUAGE}.txt
+	@echo "Gerando o zelda3_assets.dat"
+	$(PYTHON) extract_assets/restool.py $(if ${LANGUAGE},--languages=${LANGUAGE},) -r ${ROM} --dat-path=/zelda3/builds --assets-path=/zelda3/assets
+
+assets:
+	@mkdir -p assets
+
+assets/dialogue.txt:
+	@echo "Extraindo os assets da ROM"
+	$(PYTHON) extract_assets/restool.py --extract-from-rom -r ${ROM} --no-build --assets-path=/zelda3/assets
+
+assets/dialogue_${LANGUAGE}.txt:
+ifneq ($(wildcard ${ROM_TRANSLATED}),)
+	@echo "Extraindo a tradução da ROM"
+	$(PYTHON) extract_assets/restool.py --extract-dialogue -r ${ROM_TRANSLATED} --no-build --assets-path=/zelda3/assets
+endif
+
 $(TARGET_EXEC): $(OBJS) $(RES)
 	$(CC) $^ -o $@ $(LDFLAGS) $(SDLFLAGS)
 %.o : %.c
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) $(CFLAGS2) $< -o $@
 
 $(RES): src/platform/win32/zelda3.rc
 	@echo "Generating Windows resources"
 	@$(WINDRES) $< -O coff -o $@
 
-zelda3_assets.dat:
-	@echo "Extracting game resources"
-	$(PYTHON) assets/restool.py --extract-from-rom
+$(SDL2_DLL): ${SDLFOLDER}/bin/SDL2.dll
+	@echo "Copiando o SDL2.dll"
+	cp ${SDLFOLDER}/bin/SDL2.dll builds
 
-clean: clean_obj clean_gen
-clean_obj:
-	@$(RM) $(OBJS) $(TARGET_EXEC)
-clean_gen:
-	@$(RM) $(RES) zelda3_assets.dat assets/zelda3_assets.dat assets/*.txt tables/*.png assets/sprites/*.png assets/*.yaml
-	@rm -rf assets/__pycache__ assets/dungeon assets/img assets/overworld assets/sound
+builds/zelda3.ini: other/zelda3.ini
+	@echo "Copiando o zelda3.ini"
+	cp other/zelda3.ini builds
+
+clean:
+	@$(RM) $(OBJS)
+	@$(RM) -rf assets extract_assets/__pycache__
