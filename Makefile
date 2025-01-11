@@ -1,11 +1,11 @@
-TARGET_EXEC:=builds/zelda3
+RUNTIME:=$(if $(RUNTIME),$(RUNTIME),linux)
+TARGET_EXEC:=builds/$(RUNTIME)/zelda3
 ROM:=extras/zelda3.sfc
-SRCS:=$(wildcard src/*.c snes/*.c) third_party/gl_core/gl_core_3_1.c third_party/opus-1.3.1-stripped/opus_decoder_amalgam.c
+SRCS:=$(wildcard src/*.c src/snes/*.c) other/third_party/gl_core/gl_core_3_1.c other/third_party/opus-1.3.1-stripped/opus_decoder_amalgam.c
 OBJS:=$(SRCS:%.c=%.o)
 PYTHON:=/usr/bin/env python3
 CFLAGS:=$(if $(CFLAGS),$(CFLAGS),-O2 -Werror) -I .
 CFLAGS2:=$(shell sdl2-config --cflags) -DSYSTEM_VOLUME_MIXER_AVAILABLE=0
-RUNTIME:=$(if $(RUNTIME),$(RUNTIME),linux) # Configura o destino por padrão como o SO em execução
 ROM_TRANSLATED:=extras/zelda3-$(LANGUAGE).sfc
 
 ifeq (${RUNTIME},windows)
@@ -18,7 +18,7 @@ ifeq (${RUNTIME},windows)
 		WINDRES:windres
 	else
 # 		Se estivermos no Linux usa o cross-compiler para Windows
-		SDL2_DLL:=builds/SDL2.dll
+		SDL2_DLL:=builds/$(RUNTIME)/SDL2.dll
 		SDLFOLDER:=extras/SDL2
 		MINGW32:=x86_64-w64-mingw32
 		CFLAGS2:=-I$(SDLFOLDER)/include/SDL2 -Dmain=SDL_main -DSYSTEM_VOLUME_MIXER_AVAILABLE=0
@@ -31,11 +31,11 @@ else
 	SDLFLAGS:=-lSDL2 -lm
 endif
 
-all: builds/zelda3_assets.dat $(TARGET_EXEC) $(SDL2_DLL) builds/zelda3.ini clean
+all: builds/$(RUNTIME)/zelda3_assets.dat $(TARGET_EXEC) $(SDL2_DLL) builds/$(RUNTIME)/zelda3.ini clean
 
-builds/zelda3_assets.dat: assets assets/dialogue.txt assets/dialogue_${LANGUAGE}.txt
+builds/$(RUNTIME)/zelda3_assets.dat: assets assets/dialogue.txt assets/dialogue_${LANGUAGE}.txt
 	@echo "Gerando o zelda3_assets.dat"
-	$(PYTHON) extract_assets/restool.py $(if ${LANGUAGE},--languages=${LANGUAGE},) -r ${ROM} --dat-path=/zelda3/builds --assets-path=/zelda3/assets
+	$(PYTHON) extract_assets/restool.py $(if ${LANGUAGE},--languages=${LANGUAGE},) -r ${ROM} --dat-path=/zelda3/builds/$(RUNTIME) --assets-path=/zelda3/assets
 
 assets:
 	@mkdir -p assets
@@ -55,17 +55,17 @@ $(TARGET_EXEC): $(OBJS) $(RES)
 %.o : %.c
 	$(CC) -c $(CFLAGS) $(CFLAGS2) $< -o $@
 
-$(RES): src/platform/win32/zelda3.rc
+$(RES): platform/win32/zelda3.rc
 	@echo "Generating Windows resources"
 	@$(WINDRES) $< -O coff -o $@
 
 $(SDL2_DLL): ${SDLFOLDER}/bin/SDL2.dll
 	@echo "Copiando o SDL2.dll"
-	cp ${SDLFOLDER}/bin/SDL2.dll builds
+	cp ${SDLFOLDER}/bin/SDL2.dll builds/$(RUNTIME)
 
-builds/zelda3.ini: other/zelda3.ini
+builds/$(RUNTIME)/zelda3.ini: other/zelda3.ini
 	@echo "Copiando o zelda3.ini"
-	cp other/zelda3.ini builds
+	cp other/zelda3.ini builds/$(RUNTIME)
 
 clean:
 	@$(RM) $(OBJS)

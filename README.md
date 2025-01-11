@@ -55,8 +55,8 @@ Visit Wiki for more info on building the project: https://github.com/snesrev/zel
 2. Extract the ZIP to your hard drive
 3. Place the USA rom named `zelda3.sfc` in the root directory.
 4. Double-click `extract_assets.bat` in the main dir to create `zelda3_assets.dat` in that same dir
-5. Download [TCC](https://github.com/FitzRoyX/tinycc/releases/download/tcc_20221020/tcc_20221020.zip) and extract to the "\third_party" subfolder
-6. Download [SDL2](https://github.com/libsdl-org/SDL/releases/download/release-2.26.3/SDL2-devel-2.26.3-VC.zip) and extract to the "\third_party" subfolder
+5. Download [TCC](https://github.com/FitzRoyX/tinycc/releases/download/tcc_20221020/tcc_20221020.zip) and extract to the "\other\other/third_party" subfolder
+6. Download [SDL2](https://github.com/libsdl-org/SDL/releases/download/release-2.26.3/SDL2-devel-2.26.3-VC.zip) and extract to the "\other\other/third_party" subfolder
 7. Double-click `run_with_tcc.bat` in the main dir to create `zelda3.exe` in that same dir
 8. Configure with `zelda3.ini` in the main dir
 

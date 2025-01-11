@@ -4,8 +4,8 @@
 #include <assert.h>
 #include "types.h"
 
-#include "snes/spc.h"
-#include "snes/dsp_regs.h"
+#include "src/snes/spc.h"
+#include "src/snes/dsp_regs.h"
 
 #include "spc_player.h"
 

@@ -1,5 +1,5 @@
 #include <stddef.h>
-#include "snes/dsp.h"
+#include "src/snes/dsp.h"
 
 typedef struct Channel {
   uint16 pattern_order_ptr_for_chan;

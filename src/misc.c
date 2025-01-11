@@ -14,7 +14,7 @@
 #include "messaging.h"
 #include "ending.h"
 #include "attract.h"
-#include "snes/snes_regs.h"
+#include "src/snes/snes_regs.h"
 #include "assets.h"
 
 static void KillAgahnim_LoadMusic();

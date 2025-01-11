@@ -2,8 +2,8 @@
 #include "zelda_rtl.h"
 #include "variables.h"
 #include "messaging.h"
-#include "snes/snes_regs.h"
-#include "snes/ppu.h"
+#include "src/snes/snes_regs.h"
+#include "src/snes/ppu.h"
 #include "assets.h"
 #include "audio.h"
 

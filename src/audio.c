@@ -2,9 +2,9 @@
 #include "zelda_rtl.h"
 #include "variables.h"
 #include "features.h"
-#include "snes/snes_regs.h"
+#include "src/snes/snes_regs.h"
 #include "spc_player.h"
-#include "third_party/opus-1.3.1-stripped/opus.h"
+#include "other/third_party/opus-1.3.1-stripped/opus.h"
 #include "config.h"
 #include "assets.h"
 

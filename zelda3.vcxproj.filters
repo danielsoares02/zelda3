@@ -23,144 +23,144 @@
     <Filter Include="Deploy\tables">
       <UniqueIdentifier>{af7accb3-a27b-402b-ab20-86bbb57bd9a3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="third_party">
+    <Filter Include="other/third_party">
       <UniqueIdentifier>{29eb2519-e785-4828-a9e2-1d6eca0d4087}</UniqueIdentifier>
     </Filter>
-    <Filter Include="third_party\Opus">
+    <Filter Include="other/third_party\Opus">
       <UniqueIdentifier>{37a75a07-8fba-493c-aac5-0d1cbef09fe0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="third_party\gl_core\gl_core_3_1.c">
-      <Filter>third_party</Filter>
+    <ClCompile Include="other/third_party\gl_core\gl_core_3_1.c">
+      <Filter>other/third_party</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\opus_decoder_amalgam.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\opus_decoder_amalgam.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\bands.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\bands.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\celt.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\celt.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\celt_decoder.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\celt_decoder.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\cwrs.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\cwrs.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\entcode.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\entcode.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\entdec.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\entdec.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\kiss_fft.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\kiss_fft.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\laplace.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\laplace.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\mathops.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\mathops.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\mdct.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\mdct.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\modes.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\modes.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\opus.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\opus.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\opus_decoder.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\opus_decoder.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\quant_bands.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\quant_bands.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\rate.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\rate.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\vq.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\vq.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\x86\pitch_sse.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\x86\pitch_sse.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="third_party\opus-1.3.1-stripped\x86\x86cpu.c">
-      <Filter>third_party\Opus</Filter>
+    <ClCompile Include="other/third_party\opus-1.3.1-stripped\x86\x86cpu.c">
+      <Filter>other/third_party\Opus</Filter>
     </ClCompile>
-    <ClCompile Include="snes\apu.c">
+    <ClCompile Include="src\snes\apu.c">
       <Filter>Snes</Filter>
     </ClCompile>
-    <ClCompile Include="snes\cart.c">
+    <ClCompile Include="src\snes\cart.c">
       <Filter>Snes</Filter>
     </ClCompile>
-    <ClCompile Include="snes\cpu.c">
+    <ClCompile Include="src\snes\cpu.c">
       <Filter>Snes</Filter>
     </ClCompile>
-    <ClCompile Include="snes\dma.c">
+    <ClCompile Include="src\snes\dma.c">
       <Filter>Snes</Filter>
     </ClCompile>
-    <ClCompile Include="snes\dsp.c">
+    <ClCompile Include="src\snes\dsp.c">
       <Filter>Snes</Filter>
     </ClCompile>
-    <ClCompile Include="snes\input.c">
+    <ClCompile Include="src\snes\input.c">
       <Filter>Snes</Filter>
     </ClCompile>
-    <ClCompile Include="snes\ppu.c">
+    <ClCompile Include="src\snes\ppu.c">
       <Filter>Snes</Filter>
     </ClCompile>
-    <ClCompile Include="snes\snes.c">
+    <ClCompile Include="src\snes\snes.c">
       <Filter>Snes</Filter>
     </ClCompile>
-    <ClCompile Include="snes\snes_other.c">
+    <ClCompile Include="src\snes\snes_other.c">
       <Filter>Snes</Filter>
     </ClCompile>
-    <ClCompile Include="snes\spc.c">
+    <ClCompile Include="src\snes\spc.c">
       <Filter>Snes</Filter>
     </ClCompile>
-    <ClCompile Include="snes\tracing.c">
+    <ClCompile Include="src\snes\tracing.c">
       <Filter>Snes</Filter>
     </ClCompile>
-    <ClInclude Include="snes\apu.h">
-      <Filter>Snes</Filter>
-    </ClInclude>
-    <ClInclude Include="snes\cart.h">
+    <ClInclude Include="src\snes\apu.h">
       <Filter>Snes</Filter>
     </ClInclude>
-    <ClInclude Include="snes\cpu.h">
+    <ClInclude Include="src\snes\cart.h">
       <Filter>Snes</Filter>
     </ClInclude>
-    <ClInclude Include="snes\dma.h">
+    <ClInclude Include="src\snes\cpu.h">
       <Filter>Snes</Filter>
     </ClInclude>
-    <ClInclude Include="snes\dsp.h">
+    <ClInclude Include="src\snes\dma.h">
       <Filter>Snes</Filter>
     </ClInclude>
-    <ClInclude Include="snes\input.h">
+    <ClInclude Include="src\snes\dsp.h">
       <Filter>Snes</Filter>
     </ClInclude>
-    <ClInclude Include="snes\ppu.h">
+    <ClInclude Include="src\snes\input.h">
       <Filter>Snes</Filter>
     </ClInclude>
-    <ClInclude Include="snes\saveload.h">
+    <ClInclude Include="src\snes\ppu.h">
       <Filter>Snes</Filter>
     </ClInclude>
-    <ClInclude Include="snes\snes.h">
+    <ClInclude Include="src\snes\saveload.h">
       <Filter>Snes</Filter>
     </ClInclude>
-    <ClInclude Include="snes\spc.h">
+    <ClInclude Include="src\snes\snes.h">
       <Filter>Snes</Filter>
     </ClInclude>
-    <ClInclude Include="snes\dsp_regs.h">
+    <ClInclude Include="src\snes\spc.h">
       <Filter>Snes</Filter>
     </ClInclude>
-    <ClInclude Include="snes\snes_regs.h">
+    <ClInclude Include="src\snes\dsp_regs.h">
       <Filter>Snes</Filter>
     </ClInclude>
-    <ClInclude Include="snes\tracing.h">
+    <ClInclude Include="src\snes\snes_regs.h">
+      <Filter>Snes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\snes\tracing.h">
       <Filter>Snes</Filter>
     </ClInclude>
     <ClCompile Include="src\ancilla.c">
@@ -252,104 +252,104 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="third_party\gl_core\gl_core_3_1.h">
-      <Filter>third_party</Filter>
+    <ClInclude Include="other/third_party\gl_core\gl_core_3_1.h">
+      <Filter>other/third_party</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\_kiss_fft_guts.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\_kiss_fft_guts.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\arch.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\arch.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\bands.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\bands.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\celt.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\celt.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\config.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\config.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\cpu_support.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\cpu_support.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\cwrs.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\cwrs.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\ecintrin.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\ecintrin.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\entcode.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\entcode.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\entdec.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\entdec.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\float_cast.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\float_cast.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\kiss_fft.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\kiss_fft.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\laplace.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\laplace.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\mathops.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\mathops.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\mdct.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\mdct.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\mfrngcod.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\mfrngcod.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\modes.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\modes.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\opus.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\opus.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\opus_custom.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\opus_custom.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\opus_defines.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\opus_defines.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\opus_private.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\opus_private.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\opus_types.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\opus_types.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\os_support.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\os_support.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\pitch.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\pitch.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\quant_bands.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\quant_bands.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\rate.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\rate.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\stack_alloc.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\stack_alloc.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\static_modes_float.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\static_modes_float.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\static_modes_float_arm_ne10.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\static_modes_float_arm_ne10.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\vq.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\vq.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\x86\pitch_sse.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\x86\pitch_sse.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
-    <ClInclude Include="third_party\opus-1.3.1-stripped\x86\x86cpu.h">
-      <Filter>third_party\Opus</Filter>
+    <ClInclude Include="other/third_party\opus-1.3.1-stripped\x86\x86cpu.h">
+      <Filter>other/third_party\Opus</Filter>
     </ClInclude>
     <ClInclude Include="src\ancilla.h">
       <Filter>Zelda</Filter>

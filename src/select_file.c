@@ -2,7 +2,7 @@
 #include "variables.h"
 #include "load_gfx.h"
 #include "select_file.h"
-#include "snes/snes_regs.h"
+#include "src/snes/snes_regs.h"
 #include "overworld.h"
 #include "messaging.h"
 #include "sprite.h"

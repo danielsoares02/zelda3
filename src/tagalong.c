@@ -3,7 +3,7 @@
 #include "sprite.h"
 #include "zelda_rtl.h"
 #include "variables.h"
-#include "snes/snes_regs.h"
+#include "src/snes/snes_regs.h"
 #include "dungeon.h"
 #include "overworld.h"
 #include "ancilla.h"

@@ -13,7 +13,7 @@
 #include <unistd.h>
 #endif
 
-#include "snes/ppu.h"
+#include "src/snes/ppu.h"
 
 #include "types.h"
 #include "variables.h"

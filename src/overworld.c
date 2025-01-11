@@ -9,7 +9,7 @@
 #include "misc.h"
 #include "messaging.h"
 #include "player_oam.h"
-#include "snes/snes_regs.h"
+#include "src/snes/snes_regs.h"
 #include "assets.h"
 
 const uint16 kOverworld_OffsetBaseX[64] = {

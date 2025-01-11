@@ -5,11 +5,11 @@
 #include "zelda_rtl.h"
 #include "variables.h"
 #include "spc_player.h"
-#include "snes/snes.h"
-#include "snes/snes_regs.h"
-#include "snes/cpu.h"
-#include "snes/cart.h"
-#include "snes/tracing.h"
+#include "src/snes/snes.h"
+#include "src/snes/snes_regs.h"
+#include "src/snes/cpu.h"
+#include "src/snes/cart.h"
+#include "src/snes/tracing.h"
 
 Snes *g_snes;
 Cpu *g_cpu;

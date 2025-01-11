@@ -1,7 +1,7 @@
 #include "player_oam.h"
 #include "zelda_rtl.h"
 #include "variables.h"
-#include "snes/snes_regs.h"
+#include "src/snes/snes_regs.h"
 #include "player.h"
 #include "misc.h"
 

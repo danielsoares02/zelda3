@@ -9,11 +9,9 @@
 /bin/
 /assets/overworld/*.yaml
 /assets/
-/builds/
 /saves/*.sav
 /saves/sram.dat
 /saves/sram.bak
 __pycache__
 /src/*.o
-/snes/*.o
-/zelda3*.sfc
+/src/snes/*.o
