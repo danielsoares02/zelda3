@@ -6,7 +6,7 @@ OBJS:=$(SRCS:%.c=%.o)
 PYTHON:=/usr/bin/env python3
 CFLAGS:=$(if $(CFLAGS),$(CFLAGS),-O2 -Werror) -I .
 CFLAGS2:=$(shell sdl2-config --cflags) -DSYSTEM_VOLUME_MIXER_AVAILABLE=0
-ROM_TRANSLATED:=extras/zelda3-$(LANGUAGE).sfc
+ROM_TRANSLATED:=extras/zelda3-translate.sfc
 
 ifeq (${RUNTIME},windows)
 	RES:=assets/zelda3.res

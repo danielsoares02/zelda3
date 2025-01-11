@@ -1,6 +1,16 @@
-# Fork do projeto https://github.com/snesrev/zelda3
-Alterações para compilação usando docker para Linux, Windows e Switch.
+# Fork de https://github.com/snesrev/zelda3
+Alterado para compilar usando Docker para Linux, Windows e Switch.
 
+Necessário fornecer uma ROM original na pasta "extras" com o nome de "zelda3.sfc", este projeto não fornece nenhuma ROM!
+
+Se quiser compilar o jogo para outro idioma, forneça uma ROM traduzida na pasta "extras" com o nome zelda3-translate.sfc e altere o idioma no powershell builds/build_com_docker.ps1.
+
+Para compilar para Windows é necessário baixar o Simple DirectMedia Layer (SDL) (https://github.com/libsdl-org/SDL/releases), testado com a versão 2.30.11, baixe a versão para mingw e copie o conteúdo da pasta "x86_64-w64-mingw32" para a pasta "extras/SDL2".
+
+Para compilar execute o script powershell builds/build_com_docker.ps1, altere nele o destino da compilação e o idioma da ROM traduzida.
+
+Os arquivos compilados ficarão na subpasta "builds" dentro de uma pasta com o destino fornecido (linux, windows ou switch). 
+Caso tenha traduzido a ROM altere o zelda3.ini e insira o campo "Language = pt" com a sigla fornecida no powershell em vez de "pt".
 
 # Zelda3
 A reimplementation of Zelda 3.
@@ -43,94 +53,6 @@ Option 1: Launcher by RadzPrower (windows only) https://github.com/ajohns6/Zelda
 Option 2: Building it yourself
 
 Visit Wiki for more info on building the project: https://github.com/snesrev/zelda3/wiki
-
-## Installing Python & libraries on Windows (required for asset extraction steps)
-1. Download [Python](https://www.python.org/ftp/python/3.11.1/python-3.11.1-amd64.exe) installer and install with "Add to PATH" checkbox checked
-2. Open the command prompt
-3. Type `python -m pip install --upgrade pip pillow pyyaml` and hit enter
-4. Close the command prompt
-
-## Compiling on Windows with TCC (1mb Tiny C Compiler)
-1. Download the project by clicking "Code > Download ZIP" on the github page
-2. Extract the ZIP to your hard drive
-3. Place the USA rom named `zelda3.sfc` in the root directory.
-4. Double-click `extract_assets.bat` in the main dir to create `zelda3_assets.dat` in that same dir
-5. Download [TCC](https://github.com/FitzRoyX/tinycc/releases/download/tcc_20221020/tcc_20221020.zip) and extract to the "\other\other/third_party" subfolder
-6. Download [SDL2](https://github.com/libsdl-org/SDL/releases/download/release-2.26.3/SDL2-devel-2.26.3-VC.zip) and extract to the "\other\other/third_party" subfolder
-7. Double-click `run_with_tcc.bat` in the main dir to create `zelda3.exe` in that same dir
-8. Configure with `zelda3.ini` in the main dir
-
-## Compiling on Windows with Visual Studio (4.5gb IDE and compiler)
-Same Steps 1-4 above<br/>
-8. Double-click `Zelda3.sln`<br/>
-9. Install the **Desktop development with C++** workload with the VS Installer if you don't have it already (it should prompt you to do this).<br/>
-10. Change "debug" to "release" in the top dropdown<br/>
-12. Choose "build > build Zelda3" in the menu to create `zelda3.exe` in the "/bin/release" subfolder<br/>
-13. Configure with `zelda3.ini` in the main dir<br/>
-
-## Installing libraries on Linux/MacOS
-1. Open a terminal
-2. Install pip if not already installed
-```sh
-python3 -m ensurepip
-```
-3. Clone the repo and `cd` into it
-```sh
-git clone https://github.com/snesrev/zelda3
-cd zelda3
-```
-4. Install requirements using pip
-```sh
-python3 -m pip install -r requirements.txt
-```
-5. Install SDL2
-* Ubuntu/Debian `sudo apt install libsdl2-dev`
-* Fedora Linux `sudo dnf install SDL2-devel`
-* Arch Linux `sudo pacman -S sdl2`
-* macOS: `brew install sdl2` (you can get homebrew [here](https://brew.sh/))
-
-## Compiling on Linux/MacOS
-1. Place your US ROM file named `zelda3.sfc` in `zelda3`
-2. Compile
-```sh
-make
-```
-<details>
-<summary>
-Advanced make usage ...
-</summary>
-
-```sh
-make -j$(nproc) # run on all core
-make clean all  # clear gen+obj and rebuild
-CC=clang make   # specify compiler
-```
-</details>
-
-## Nintendo Switch
-
-You need [DevKitPro](https://devkitpro.org/wiki/Getting_Started) and [Atmosphere](https://github.com/Atmosphere-NX/Atmosphere) installed.
-
-```sh
-(dkp-)pacman -S git switch-dev switch-sdl2 switch-tools
-cd platform/switch
-make # Add -j$(nproc) to build using all cores ( Optional )
-# You can test the build directly onto the switch ( Optional )
-nxlink -s zelda3.nro
-```
-## Building using Docker
-In case you have Docker/Podman intalled you can build a docker image using the `Dockerfile` instead of using the above methods.
-
-### Build the Docker Image
-
-This only needs to be done one time unless the `Dockerfile` has been updated/changed
-
-Clone this repo first
-
-Make sure you are in the root path of this repo
-```sh
-docker build . -t zelda3
-```
 
 ### Build the game
 Ensure the rom named zelda3.sfc is in the `tables` directory
