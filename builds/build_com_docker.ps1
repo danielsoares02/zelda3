@@ -51,7 +51,7 @@ function Main {
         $FileContent["General"]["Language"] = $lang
     }
     if ($extendedAspectRatio -eq "S") {
-        $FileContent["General"]["ExtendedAspectRatio"] = "16:9"
+        $FileContent["General"]["ExtendedAspectRatio"] = "extend_y,16:9"
     }
     if ($itemSwitchLR -eq "S") {
         $FileContent["Features"]["ItemSwitchLR"] = "1"
